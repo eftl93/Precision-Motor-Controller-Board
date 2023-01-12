@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+$C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 idloc IDLOC 5 200000 200000 8 1 1
 init CODE 0 E0 E0 4 1 2
 reset_vec CODE 0 0 0 4 1 2
@@ -92,7 +92,7 @@ MEDIUMCONST 18A4-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\High-Precision-Motor-Controller-Board.production.o
-8 intcode CODE >5349:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
+8 intcode CODE >5349:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
 8 intcode CODE >40:E:\GitHub\High-Precision-Motor-Controller-Board\spi.c
 1A intcode CODE >42:E:\GitHub\High-Precision-Motor-Controller-Board\spi.c
 28 intcode CODE >44:E:\GitHub\High-Precision-Motor-Controller-Board\spi.c
@@ -411,22 +411,22 @@ CC intcode CODE >73:E:\GitHub\High-Precision-Motor-Controller-Board\spi.c
 14C8 text0 CODE >76:E:\GitHub\High-Precision-Motor-Controller-Board\main.c
 14CC text0 CODE >78:E:\GitHub\High-Precision-Motor-Controller-Board\main.c
 14D6 text0 CODE >79:E:\GitHub\High-Precision-Motor-Controller-Board\main.c
-183E cinit CODE >1867:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-183E cinit CODE >1869:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-183E cinit CODE >1872:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-183E cinit CODE >1896:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1842 cinit CODE >1897:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1844 cinit CODE >1898:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1844 cinit CODE >1899:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1846 cinit CODE >1900:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1848 cinit CODE >1901:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-184A cinit CODE >1907:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-184A cinit CODE >1909:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-184C cinit CODE >1910:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-184E cinit CODE >1912:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1850 cinit CODE >1913:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1852 cinit CODE >1914:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
-1854 cinit CODE >1915:C:\Users\eder0\AppData\Local\Temp\xcAs444.s
+183E cinit CODE >1867:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+183E cinit CODE >1869:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+183E cinit CODE >1872:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+183E cinit CODE >1896:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1842 cinit CODE >1897:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1844 cinit CODE >1898:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1844 cinit CODE >1899:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1846 cinit CODE >1900:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1848 cinit CODE >1901:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+184A cinit CODE >1907:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+184A cinit CODE >1909:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+184C cinit CODE >1910:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+184E cinit CODE >1912:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1850 cinit CODE >1913:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1852 cinit CODE >1914:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
+1854 cinit CODE >1915:C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -452,17 +452,17 @@ _CM2CON0 F78 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-B
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __end_of_write_data 1696 0 CODE 0 text11 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\High-Precision-Motor-Controller-Board.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _set_absolute_velocity 14E8 0 CODE 0 text3 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _PEIE 7F96 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _RCON FD0 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
-___sp 0 0 STACK 2 stack C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+___sp 0 0 STACK 2 stack C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 _main 141A 0 CODE 0 text0 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 btemp 2E 0 COMRAM 1 temp dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _LM629_init 1272 0 CODE 0 text7 dist/default/production\High-Precision-Motor-Controller-Board.production.o
-start E0 0 CODE 0 init C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+start E0 0 CODE 0 init C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 spi_data@tx_data 7 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hpowerup E0 0 CODE 0 powerup dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -471,11 +471,11 @@ ttemp5 2F 0 COMRAM 1 temp dist/default/production\High-Precision-Motor-Controlle
 ttemp6 32 0 COMRAM 1 temp dist/default/production\High-Precision-Motor-Controller-Board.production.o
 ttemp7 36 0 COMRAM 1 temp dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __end_of_spi_slave_init 183E 0 CODE 0 text1 dist/default/production\High-Precision-Motor-Controller-Board.production.o
-__accesstop 60 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-intlevel0 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-intlevel1 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-intlevel2 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-intlevel3 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+__accesstop 60 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+intlevel0 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+intlevel1 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+intlevel2 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+intlevel3 0 0 CODE 0 text C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 wtemp8 2F 0 COMRAM 1 temp dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -491,8 +491,8 @@ _ANSELC F3A 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Bo
 _ANSELD F3B 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _ANSELE F3C 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __end_of_LM629_init 141A 0 CODE 0 text7 dist/default/production\High-Precision-Motor-Controller-Board.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 set_absolute_velocity@analog_in 10 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __end_of_DATABUS_DIR 17A6 0 CODE 0 text15 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -519,7 +519,7 @@ ___rparam_used 1 0 ABS 0 - dist/default/production\High-Precision-Motor-Controll
 DATABUS@dir1 A 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _SRCON0 F47 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _SSP1IE 7CEB 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+isa$xinst 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -558,7 +558,7 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production\High-Precision-Motor-Controll
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\High-Precision-Motor-Controller-Board.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -670,10 +670,10 @@ __Lconfig 0 0 CONFIG 4 config dist/default/production\High-Precision-Motor-Contr
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _set_absolute_acceleration 1696 0 CODE 0 text8 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\High-Precision-Motor-Controller-Board.production.o
-isa$std 1 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+isa$std 1 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 _motor_off 1858 0 CODE 0 text6 dist/default/production\High-Precision-Motor-Controller-Board.production.o
-stackhi 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-stacklo 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+stackhi 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+stacklo 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\High-Precision-Motor-Controller-Board.production.o
 chip_select@chip 7 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -722,7 +722,7 @@ __Ltext14 0 0 ABS 0 text14 dist/default/production\High-Precision-Motor-Controll
 __Ltext15 0 0 ABS 0 text15 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Ltext16 0 0 ABS 0 text16 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 DATABUS_DIR@dir 7 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 __Lpowerup E0 0 CODE 0 powerup dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\High-Precision-Motor-Controller-Board.production.o
 write_data@LSB E 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
@@ -733,8 +733,8 @@ __psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\High-Precis
 main@dummy_data 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 _DATABUS_DIR 1766 0 CODE 0 text15 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\High-Precision-Motor-Controller-Board.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
-___heap_lo 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAs444.o
+___heap_hi 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
+___heap_lo 0 0 ABS 0 - C:\Users\eder0\AppData\Local\Temp\xcAsa58.o
 set_absolute_acceleration@trajectory_control_LSB 15 0 COMRAM 1 cstackCOMRAM dist/default/production\High-Precision-Motor-Controller-Board.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production\High-Precision-Motor-Controller-Board.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\High-Precision-Motor-Controller-Board.production.o

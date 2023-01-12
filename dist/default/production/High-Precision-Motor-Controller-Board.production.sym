@@ -350,7 +350,7 @@ text16 1082 18A3 CODE 1082 0
 %locals
 dist/default/production\High-Precision-Motor-Controller-Board.production.o
 C:/Users/eder0/.mchp_packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f46k22.h
-C:\Users\eder0\AppData\Local\Temp\xcAs444.s
+C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
 1867 183E 0 CODE 0
 1869 183E 0 CODE 0
 1872 183E 0 CODE 0
@@ -678,7 +678,7 @@ lm629.c
 316 1252 0 CODE 0
 318 126E 0 CODE 0
 319 1270 0 CODE 0
-C:\Users\eder0\AppData\Local\Temp\xcAs444.s
+C:\Users\eder0\AppData\Local\Temp\xcAsa58.s
 5349 8 0 CODE 0
 spi.c
 40 8 0 CODE 0

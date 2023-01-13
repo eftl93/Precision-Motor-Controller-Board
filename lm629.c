@@ -191,7 +191,7 @@ beginning1:
 	else
 		{
 			check_busy();
-			write_command(0x1D);
+			write_command(RSTI);
         	check_busy();
 			write_data(0x00,0x00);
 			check_busy();
@@ -253,6 +253,7 @@ beginning3:
 				goto beginning3;
 				}
 		}
+//load pid coefficients for motor controllers
 chip_select(0);
 filter_module();
 chip_select(1);
@@ -261,14 +262,15 @@ chip_select(2);
 filter_module();
 chip_select(3);
 filter_module();
-set_absolute_acceleration(0,0x00000250); //set this acceleration through trial and error in such a way it had a comfortable reaction
+//Default acceleration values discovered via trial and error
+set_absolute_acceleration(0,0x00000250);
 set_absolute_acceleration(1,0x00000250);
 set_absolute_acceleration(2,0x00000250);
 set_absolute_acceleration(3,0x00000250);
 }
 
 //Since the same bus is used for both reading and writing
-//the direction of the bus must be changed to input or output from the mcu
+//the direction of the bus must be changed to input/output from the mcu
 //point of view before writing or reading data to the bus
 //if arg is 0x00, the direction will be OUT
 //if arg is 0xFF, the direction will be IN
@@ -288,9 +290,9 @@ void DATABUS_DIR(uint8_t dir)
     }
 }
 
-//either read or write data to the pins connected to the DATABUS in the correct order (connected to the lm629)
-//if dirl is 0x00, byte0 must be passed to the DATABUS in the correct order
-//if dirl is 0xFF, The values in the DATABUS must be returned in the correct order
+//either read/write data from/to the pins connected to the DATABUS (connected to the lm629)
+//if dirl is 0x00, byte0 must be passed to the DATABUS
+//if dirl is 0xFF, The values in the DATABUS must be returned
 uint8_t DATABUS(uint8_t dir1, uint8_t byte0)
 {
 uint8_t x;

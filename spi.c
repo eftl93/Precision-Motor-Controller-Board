@@ -16,7 +16,7 @@ extern uint8_t signal_distribution_packet[];
 void spi_slave_init()
 {
     SSP1STATbits.SMP = 0;  //must be cleared for slave mode
-    SSP1STATbits.CKE = 1; //Trasnmit occurs on transition from active to idle clock state
+    SSP1STATbits.CKE = 1; //Transmit occurs on transition from active to idle clock state
     SSP1CON1bits.CKP = 0;
     SSP1CON1bits.SSPM = 0x04; //SPI Slave mode, csk pin, and ss pin are enabled
     SSP1CON3 = 0b00010000;  //SSP1BUF update every time that a new data byte is shifted in ignoring the BF bit
@@ -43,7 +43,7 @@ void __interrupt() SPI_ISR(void)
 {
     if(PIR1bits.SSP1IF)
     {
-        spi_read_data=SSP1BUF;  //Save content in a global variable
+        spi_read_data=SSP1BUF;  //Save SPI buffer content in a global variable
         if(spi_read_data == 'z') //'z' character marks the start of a valid packaged coming
         {
             recording_on = 1;    //we want to save the coming string so we set a flag to do it. 

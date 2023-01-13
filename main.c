@@ -29,10 +29,9 @@ struct spi_package //the elements of the struct can be changed to whatever kind 
     uint8_t ry_joystick;
 };
 
-struct spi_package controller; //This code was tested with a controller with two just
+struct spi_package controller; //This code was tested using a controller with two joysticks
 
 
-//Program begins
 void main(void)
 {
     uint8_t received_data;

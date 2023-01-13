@@ -83,16 +83,16 @@ Declaration
 
 //Procedure Declaration
 void LM629_init(void);
-void DATABUS_DIR(unsigned char dir);     //Added in REV 5 for new pin assignment
-unsigned char DATABUS(unsigned char dir1, unsigned char byte0);// Added in Rev 5 for new pin assigment
-void LM629_velocity_start(const unsigned char chip, unsigned long vel);
-void LM629_position_start(const unsigned char chip, const unsigned long vel, const long pos);
+void DATABUS_DIR(uint8_t dir);     //Added in REV 5 for new pin assignment
+uint8_t DATABUS(uint8_t dir1, uint8_t byte0);// Added in Rev 5 for new pin assignment
+void LM629_velocity_start(const uint8_t chip, unsigned long vel);
+void LM629_position_start(const uint8_t chip, const unsigned long vel, const long pos);
 void check_busy(void);
-unsigned char read_status(void);
-unsigned int read_data(void);
+uint8_t read_status(void);
+uint16_t read_data(void);
 void write_data(uint8_t MSB, uint8_t LSB);
-void write_command(unsigned char command);
-void chip_select(unsigned char chip);
+void write_command(uint8_t command);
+void chip_select(uint8_t chip);
 void motor_break(void);
 void all_break(void);
 void motor_off(void);

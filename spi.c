@@ -32,21 +32,23 @@ void spi_slave_init()
     SSP1CON1bits.SSPEN = 1; //SPI enabled
 }
 
-void spi_data(unsigned char tx_data)
+void spi_data(uint8_t tx_data)
 {
     SSP1BUF=tx_data;
 }
+
+//Interrupt Service routing, it services interrupts coming from the SPI peripheral
 
 void __interrupt() SPI_ISR(void)
 {
     if(PIR1bits.SSP1IF)
     {
         spi_read_data=SSP1BUF;  //Save content in a global variable
-        if(spi_read_data == 'z')
+        if(spi_read_data == 'z') //'z' character marks the start of a valid packaged coming
         {
-            recording_on = 1;
+            recording_on = 1;    //we want to save the coming string so we set a flag to do it. 
         }
-        else if(spi_read_data == 'y')
+        else if(spi_read_data == 'y') //if the character received is 'y', it means that the packages is finished
         {
             recording_on = 0;
         }
@@ -55,19 +57,19 @@ void __interrupt() SPI_ISR(void)
             recording_on = recording_on;
         }
         
-        switch(recording_on)
+        switch(recording_on) 
         {
             case(0):
-                spi_str_interrupt = &signal_distribution_packet;
+                spi_str_interrupt = &signal_distribution_packet; //if the recording is "off", point "spi_str_interrupt" to "signal_distribution_packet[0]" address
                 break;
             case(1):
-                *spi_str_interrupt++ = spi_read_data;
+                *spi_str_interrupt++ = spi_read_data;           //if the recording is "on", save the byte received over SPI to the address pointed and increase the address to the next element of the array
                 break;
             default:
-                *spi_str_interrupt = *spi_str_interrupt;
+                *spi_str_interrupt = *spi_str_interrupt;       
                 break;
         } 
-        PIR1bits.SSP1IF=0;
+        PIR1bits.SSP1IF=0;                                     //clear the flag to 
         SSP1BUF = 0x55;         //fill the buffer with dummy data
     }
 }

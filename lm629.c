@@ -11,6 +11,8 @@
 
 
 //look up table
+//This table is generated with Octave-7.2
+//the script is located in "lookup_table_calculator.m" file
 uint32_t lm629_velocity(uint8_t analog_value)
 {
     uint32_t velocity;
@@ -33,7 +35,7 @@ Definition of Functions
 //to 1, keep polling the register until it becomes 0. 
 void check_busy()
 {
-	unsigned char x;
+	uint8_t x;
 	x=read_status();
 	while (x & busy_bit)
 		{
@@ -42,9 +44,9 @@ void check_busy()
 }
 
 //This function will return the status register, it returns a byte
-unsigned char read_status()
+uint8_t read_status()
 {
-	unsigned char status;
+	uint8_t status;
 	DATABUS_DIR(0xFF); //Set the data bus mcu pins as inputs
 	LM629_PS=0;        //To Read status register PS pin must be LOW
 	_delay(3);        //PS setup time: T8 delay = min 30 ns
@@ -62,11 +64,11 @@ return status;
 // reads 16 bits of data from the LM629
 // it returns a 16 bit number. 
 //chip_select() must be called before if more than one LM629 is being used
-unsigned int read_data()
+uint16_t read_data()
 {
-	unsigned char left_value;
-	unsigned char right_value;
-	unsigned int data;
+	uint8_t left_value;
+	uint8_t right_value;
+	uint16_t data;
 	DATABUS_DIR(0xFF); //set the MCU bus as an input to read values
 	LM629_PS=1;        //PS must equal 1 to read data
 	_delay(5);         //T10 delay
@@ -115,7 +117,7 @@ void write_data(uint8_t MSB, uint8_t LSB)
 
 //writes command to the LM629
 //chip_select() must be called before if more than one LM629 is being used
-void write_command(unsigned char command)
+void write_command(uint8_t command)
 {
     check_busy();
 	DATABUS_DIR(0); //set the MCU pin as outputs
@@ -134,7 +136,7 @@ void write_command(unsigned char command)
 
 void LM629_init()
 {
-	unsigned char x;
+	uint8_t x;
 	x=0;
     LM629_RD_DIR = 0;
     LM629_PS_DIR = 0;
@@ -148,7 +150,7 @@ void LM629_init()
 	LM629_RD=1;
 	LM629_WR=1;
 	LM629_RST=1;
-/*	chip_select(0);
+	chip_select(0);
 beginning:
 	__delay_us(10);
 	LM629_RST=0;
@@ -173,7 +175,7 @@ beginning:
 				goto beginning;
 				}
 		}
-*/
+
 	chip_select(1);
 beginning1:
 	__delay_us(10);
@@ -200,7 +202,7 @@ beginning1:
 				}
 		}
 
-/*    chip_select(2);
+    chip_select(2);
 beginning2:
 	__delay_us(10);
 	LM629_RST=0;
@@ -225,7 +227,7 @@ beginning2:
 				goto beginning2;
 				}
 		}
-*/    
+    
 	chip_select(3);
 beginning3:
 	__delay_us(10);
@@ -251,15 +253,17 @@ beginning3:
 				goto beginning3;
 				}
 		}
-//chip_select(0);
-//filter_module();
+chip_select(0);
+filter_module();
 chip_select(1);
 filter_module();
-//chip_select(2);
-//filter_module();
+chip_select(2);
+filter_module();
 chip_select(3);
 filter_module();
-set_absolute_acceleration(1,0x00000250); //set this acceleration through trial and error in such a way it had a comfortable reaction
+set_absolute_acceleration(0,0x00000250); //set this acceleration through trial and error in such a way it had a comfortable reaction
+set_absolute_acceleration(1,0x00000250);
+set_absolute_acceleration(2,0x00000250);
 set_absolute_acceleration(3,0x00000250);
 }
 
@@ -268,7 +272,7 @@ set_absolute_acceleration(3,0x00000250);
 //point of view before writing or reading data to the bus
 //if arg is 0x00, the direction will be OUT
 //if arg is 0xFF, the direction will be IN
-void DATABUS_DIR(unsigned char dir)
+void DATABUS_DIR(uint8_t dir)
 {
     if(dir==0)
     {
@@ -287,9 +291,9 @@ void DATABUS_DIR(unsigned char dir)
 //either read or write data to the pins connected to the DATABUS in the correct order (connected to the lm629)
 //if dirl is 0x00, byte0 must be passed to the DATABUS in the correct order
 //if dirl is 0xFF, The values in the DATABUS must be returned in the correct order
-unsigned char DATABUS(unsigned char dir1, unsigned char byte0)
+uint8_t DATABUS(uint8_t dir1, uint8_t byte0)
 {
-unsigned char x;
+uint8_t x;
 if(dir1==0)
 { 
     D0 = ((byte0 & 0x01) >> 0);
@@ -318,7 +322,7 @@ else if (dir1==0xFF)
 return x;
 }
 
-void chip_select(unsigned char chip)
+void chip_select(uint8_t chip)
 {
 	if(chip==0)
 	{	
@@ -375,24 +379,24 @@ void motor_break()
 
 void all_break()
 {
-    //chip_select(0);
-    //motor_break();
+    chip_select(0);
+    motor_break();
     chip_select(1);
     motor_break();
-    //chip_select(2);
-    //motor_break();
+    chip_select(2);
+    motor_break();
     chip_select(3);
     motor_break();
 }
 
 void all_off()
 {
-    //chip_select(0);
-    //motor_off();
+    chip_select(0);
+    motor_off();
     chip_select(1);
     motor_off();
-    //chip_select(2);
-    //motor_off();
+    chip_select(2);
+    motor_off();
     chip_select(3);
     motor_off();
 }
@@ -470,7 +474,7 @@ void set_absolute_velocity(uint8_t motor, uint8_t analog_in)
     
     switch(motor)
     {
-            case (3): //this is the left motor, it needs to spin opposite direction as the right motor
+            case ((2)|(3)): //this is the left motor, it needs to spin opposite direction as the right motor
             {
                 if(analog_in <= 15)
                 {
@@ -482,7 +486,7 @@ void set_absolute_velocity(uint8_t motor, uint8_t analog_in)
                 }
                 break;
             }
-            case(1): //this is the right motor, it needs to spin opposite direction as the left motor
+            case((0)|(1)): //this is the right motor, it needs to spin opposite direction as the left motor
             {
                 if(analog_in > 15)
                 {

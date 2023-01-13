@@ -32,7 +32,7 @@ End of Revisions
 #define SDO1_DIR TRISCbits.RC5
 
 void spi_slave_init(void);
-void spi_data(unsigned char tx_data);
+void spi_data(uint8_t tx_data);
 
 
 #endif 

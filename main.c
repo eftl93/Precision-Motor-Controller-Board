@@ -1,4 +1,12 @@
-
+/*
+ * File:   main.c
+ * Author: Eder Torres
+ *
+ * This file initializes the MCU into a safe state
+ * it creates a struct for data received through SPI.
+ * 
+ *  
+ */
 
 
 #include <xc.h>                  
@@ -7,14 +15,13 @@
 #include "main.h"
 #define _XTAL_FREQ 64000000       //Use 64MHz as FOSC (16MHz Crystal with 4X PLL)
 
-////////////////////////////////////////////////////////////////////////////////
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-//%///////////////////////////Start Main Loop////////////////////////////////%//
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-////////////////////////////////////////////////////////////////////////////////
+//Global variable declarations
 extern volatile uint8_t spi_read_data;
-uint8_t signal_distribution_packet[6];
-struct spi_package
+uint8_t signal_distribution_packet[5]; //determines the size of the packet to be received
+                                       //[0] will store the store the character "z"
+
+
+struct spi_package //the elements of the struct can be changed to whatever kind of data is expected to be received
 {
     uint8_t lx_joystick;
     uint8_t ly_joystick;
@@ -22,12 +29,14 @@ struct spi_package
     uint8_t ry_joystick;
 };
 
-struct spi_package classic_ctrl;
+struct spi_package controller; //This code was tested with a controller with two just
 
+
+//Program begins
 void main(void)
 {
-    unsigned char received_data;
-    unsigned char dummy_data;
+    uint8_t received_data;
+    uint8_t dummy_data;
     received_data = 0x00;
     dummy_data = 0x55;
     RCON &= 0x7F;   //RCONbits.IPEN = 0, Disable priority level on interrupts
@@ -66,26 +75,25 @@ void main(void)
     //correct function is called, each function is meant to send commands to the
     //LM629s in order to generate the correct PWM signals which are fed to H-Bridges
     //to start mobilizing the robot
-    
     while(1)
     {
-        classic_ctrl.lx_joystick = signal_distribution_packet[1];
-        classic_ctrl.ly_joystick = signal_distribution_packet[2];
-        classic_ctrl.rx_joystick = signal_distribution_packet[3];
-        classic_ctrl.ry_joystick = signal_distribution_packet[4];
-        signal_distribution_packet[5] = '\n';
+        controller.lx_joystick = signal_distribution_packet[1];
+        controller.ly_joystick = signal_distribution_packet[2];
+        controller.rx_joystick = signal_distribution_packet[3];
+        controller.ry_joystick = signal_distribution_packet[4];
         
-        set_absolute_velocity(1,classic_ctrl.ly_joystick);
-        set_absolute_velocity(3,classic_ctrl.ry_joystick);
-        //set_absolute_velocity(1,31);
-        //set_absolute_velocity(3,31);
+        //the values received through spi from each joystick have a value from 0 to 31
+        //in "lm629.c" file, there is a look up table that converts this value into a speed with units of samples/period (quadrature_encoder_samples * Fclock_lm629 )
+        //and direction of the motor. 0-15, gives a negative direction value to motor 2 and 3 and if its from 16-31 it gives a positive direction to motor 2 and 3 (it's the opposite for motor 0 and 1)
+        //if the joystick value is 16, the speed will be 0. If the joystick value is 0 or 31, the speed of the motor will be the maximum written on the look up table in the
+        //"lm629.c" file
+        set_absolute_velocity(1,controller.ly_joystick);
+        set_absolute_velocity(3,controller.ry_joystick);
+        //set_absolute_velocity(0,31);
+        //set_absolute_velocity(2,31);
 
 
     } 
 }
-////////////////////////////////////////////////////////////////////////////////
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-//%/////////////////////////////End Main Loop////////////////////////////////%//
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-////////////////////////////////////////////////////////////////////////////////
+
 

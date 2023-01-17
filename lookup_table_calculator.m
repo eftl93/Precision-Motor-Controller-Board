@@ -10,7 +10,7 @@ clc
 %Encoder lines with per resolution of LM629 = 1856*4 = 74240
 %LM629 Clock Frequency = 4MHz
 %Sample time = 2048/Fclock
-%LM629 PWM Resolution = 8-bits = 256 steps
+%LM629 PWM Resolution = 7-bits = 128 steps
 
 %CONSTANTS
 
@@ -37,9 +37,9 @@ C = 1/60
 
 
 
-rpm_per_pwm_step = 40/255
-pwm_duty_per_analog_step_positive = 255/15
-pwm_duty_per_analog_step_negative = 255/16
+rpm_per_pwm_step = 80/127
+pwm_duty_per_analog_step_positive = 127/15
+pwm_duty_per_analog_step_negative = 127/16
 
 a = 16:-1:9
 b = a - 8
